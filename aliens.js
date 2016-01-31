@@ -1,7 +1,20 @@
 var prompt = require('prompt');
 prompt.start();
 
-prompt.get(['first_name', 'last_name', 'age', 'time_of_siting','sighting_location','other_witness','description_thoughts'], function(err, result) {
+prompt.get([{
+name: 'first_name',
+required: true
+}, 
+'last_name', 
+{
+name:'age',
+pattern: /^[0-9]/
+}, 
+'time_of_siting',
+'sighting_location',
+'other_witness',
+'description_thoughts'
+], function(err, result) {
     
     var report = `FBI aliens sighting report:
 
