@@ -8,9 +8,14 @@ required: true
 'last_name', 
 {
 name:'age',
-pattern: /^[0-9]/
-}, 
-'time_of_siting',
+message: 'Enter your age (a numeric value)',
+pattern: /^[0-9]$/ //numeric required at start of sting 
+},
+{ 
+name:'time_of_siting',
+message: 'examples: 12:00AM  12:00 pm  12:00PM  12:00am',
+pattern: /^([1-9]|1[0-2]):([0-5]\d)\s?(AM|PM)?$/i //limits to standard time and makes am and pm case insensitive while allowing for white space but requiring string to end with AM or PM is eluding me
+},
 'sighting_location',
 'other_witness',
 'description_thoughts'
